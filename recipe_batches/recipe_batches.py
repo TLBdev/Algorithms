@@ -3,8 +3,13 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
-
+  batches_worth = []
+  for k, v in recipe.items():
+    if k in ingredients:
+      batches_worth.append(ingredients[k] // recipe[k])
+    else:
+      batches_worth.append(0)
+  return min(batches_worth)
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
